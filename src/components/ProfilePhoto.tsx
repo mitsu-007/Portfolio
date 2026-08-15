@@ -12,7 +12,7 @@ export const ProfilePhoto: React.FC<ProfilePhotoProps> = ({ size = 'large', clas
   const [customPhoto, setCustomPhoto] = useState<string | null>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
-  const defaultPhoto = "https://res.cloudinary.com/dkduejkuj/image/upload/v1786653985/4f3bfb7a-1d6a-4f64-bd75-070fe8d807d9.png";
+  const defaultPhoto = "https://res.cloudinary.com/dkduejkuj/image/upload/v1786777669/ee2e9248-d9c8-4498-ad94-412cb29075b5.png";
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -61,7 +61,7 @@ export const ProfilePhoto: React.FC<ProfilePhotoProps> = ({ size = 'large', clas
               src={customPhoto || defaultPhoto}
               alt="Nidhi Kumari Profile"
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.src =
                   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='100%25' height='100%25' fill='%23061925'/%3E%3Ccircle cx='200' cy='180' r='80' fill='%2388B8B3' opacity='0.25'/%3E%3Cpath d='M120 400 C 120 300, 280 300, 280 400 Z' fill='%23527779' opacity='0.5'/%3E%3Ccircle cx='200' cy='180' r='60' fill='%2388B8B3' opacity='0.8'/%3E%3Ctext x='50%25' y='460' text-anchor='middle' fill='%23F7F8F7' font-family='sans-serif' font-size='16' font-weight='bold'%3ENIDHI KUMARI%3C/text%3E%3C/svg%3E";

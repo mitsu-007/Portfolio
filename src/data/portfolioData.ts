@@ -1,4 +1,4 @@
-import { PersonalInfo, EducationItem, PersonalStrength, SkillItem, ProjectItem } from '../types';
+import { PersonalInfo, EducationItem, PersonalStrength, SkillItem, ProjectItem, CertificateItem } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: 'NIDHI KUMARI',
@@ -232,3 +232,61 @@ export const projectsData: ProjectItem[] = [
     liveUrl: '#',
   },
 ];
+
+export const certificatesData: CertificateItem[] = [
+  {
+    id: 'cisco-modern-ai',
+    title: 'Introduction to Modern AI',
+    issuer: 'Cisco Networking Academy',
+    date: 'July 14, 2026',
+    category: 'AI / Technology',
+    recipient: 'Nidhi Kumari',
+    description: 'Successfully completed the Introduction to Modern AI course from Cisco Networking Academy, mastering fundamental AI principles, LLMs, and intelligent dialogue systems.',
+    topics: [
+      'Basic AI and Machine Learning concepts',
+      'Object classification and image segmentation',
+      'Machine translation',
+      'Large Language Models (LLMs)',
+      'Prompting LLMs',
+      'LLM-enabled chatbots',
+      'Two-way chatbot dialogue',
+      'Collaboration between chatbots',
+      'LLM tools',
+      'Multimodal prompting'
+    ],
+    verificationUrl: '#',
+  },
+  {
+    id: 'gfg-python-skillup',
+    title: 'Python Skill Up',
+    issuer: 'GeeksforGeeks',
+    date: '2026',
+    category: 'Programming',
+    recipient: 'NIDHI KUMARI',
+    description: 'Successfully completed the Python Skill Up program, demonstrating continued learning and development of Python programming skills.',
+    topics: [
+      'Python Syntax & Data Structures',
+      'Functions & Control Flow',
+      'Object-Oriented Programming in Python',
+      'Problem Solving & Data Handling'
+    ],
+    verificationUrl: '#',
+  },
+  {
+    id: 'gfg-career-boost',
+    title: 'Career Boost Workshop',
+    issuer: 'GeeksforGeeks Classroom Program',
+    date: '2026',
+    category: 'Workshop',
+    recipient: 'Nidhi Kumari',
+    description: 'Successfully completed the Career Boost Workshop conducted through the GeeksforGeeks Classroom Program.',
+    topics: [
+      'Technical Interview Preparation',
+      'Data Structures Practice',
+      'Resume & Portfolio Optimization',
+      'Industry Development Standards'
+    ],
+    verificationUrl: '#',
+  },
+];
+

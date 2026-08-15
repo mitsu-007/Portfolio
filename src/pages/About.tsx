@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { PageTransition } from '../components/PageTransition';
 import { SectionHeading } from '../components/SectionHeading';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { personalInfo, educationData, strengthsData } from '../data/portfolioData';
-import { GraduationCap, MapPin, MessageSquare, Brain, Zap, Check, UserCheck } from 'lucide-react';
+import { GraduationCap, MapPin, MessageSquare, Brain, Zap, Check, UserCheck, Award, ArrowRight } from 'lucide-react';
 
 export const About: React.FC = () => {
   const getIcon = (name: string) => {
@@ -186,6 +187,36 @@ export const About: React.FC = () => {
             ))}
           </div>
         </section>
+
+        {/* ==========================================
+            LEARNING & CERTIFICATIONS PROMO CARD
+            ========================================== */}
+        <ScrollReveal>
+          <section className="bg-[#07323D] text-[#F7F8F7] rounded-3xl p-6 sm:p-8 border border-[#527779] shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#061925] border border-[#527779] text-[#88B8B3] flex items-center justify-center flex-shrink-0 shadow-xs">
+                <Award className="w-6 h-6" />
+              </div>
+
+              <div className="space-y-1">
+                <h3 className="text-lg font-extrabold text-[#F7F8F7]">
+                  Learning & Certifications
+                </h3>
+                <p className="text-xs sm:text-sm text-[#D2D7D8] leading-relaxed max-w-xl">
+                  Alongside my academic journey, I continuously build my technical knowledge through courses, workshops, and practical learning programs.
+                </p>
+              </div>
+            </div>
+
+            <NavLink
+              to="/certifications"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold text-[#F7F8F7] bg-[#061925] hover:bg-[#527779] transition-colors shadow-2xs group flex-shrink-0"
+            >
+              <span>Explore Certifications</span>
+              <ArrowRight className="w-4 h-4 text-[#88B8B3] group-hover:translate-x-1 transition-transform" />
+            </NavLink>
+          </section>
+        </ScrollReveal>
 
         {/* ==========================================
             PERSONAL STRENGTHS

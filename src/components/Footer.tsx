@@ -54,6 +54,7 @@ export const Footer: React.FC = () => {
                 { to: '/about', label: 'About' },
                 { to: '/skills', label: 'Skills' },
                 { to: '/projects', label: 'Projects' },
+                { to: '/certifications', label: 'Certifications' },
                 { to: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.to}>

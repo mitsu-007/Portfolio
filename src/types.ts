@@ -60,3 +60,18 @@ export interface NavLink {
   path: string;
   label: string;
 }
+
+export interface CertificateItem {
+  id: string;
+  title: string;
+  issuer: string;
+  date?: string;
+  image?: string;
+  pdfUrl?: string;
+  isPdf?: boolean;
+  category: string; // 'AI / Technology' | 'Programming' | 'Workshop' | 'Course' | 'Other'
+  description: string;
+  recipient: string;
+  topics?: string[];
+  verificationUrl?: string;
+}
