@@ -125,7 +125,7 @@ export const Header: React.FC = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border border-[#88B8B3] bg-[#88B8B3] text-[#061925] hover:bg-[#061925] hover:text-[#F7F8F7] shadow-xs group"
               >
                 <Phone className="w-3.5 h-3.5 transition-transform group-hover:rotate-12" />
-                <span>Get in Touch</span>
+                <span>Contact me</span>
               </NavLink>
             </motion.div>
           </div>
@@ -178,7 +178,7 @@ export const Header: React.FC = () => {
                     className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-[#061925] bg-[#88B8B3] hover:bg-[#061925] hover:text-[#F7F8F7] transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>Contact Nidhi</span>
+                    <span>Contact me</span>
                   </NavLink>
                 </div>
               </nav>

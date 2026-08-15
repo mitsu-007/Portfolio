@@ -11,7 +11,9 @@ export const personalInfo: PersonalInfo = {
   course: 'CSDS',
   courseFull: 'Computer Science & Data Science',
   phone: '9955862892',
-  email: 'nidhikumari.csds@example.com',
+  email: 'nidhikumari62014@gmail.com',
+  linkedinUrl: 'https://www.linkedin.com/in/nidhi-kumari1512/',
+  linkedinDisplay: 'linkedin.com/in/nidhi-kumari1512',
   tagline: 'Passionate about web development, problem solving, and building practical digital experiences.',
   bio: "Hi, I'm Nidhi Kumari, a 3rd-year Computer Science & Data Science student at GL Bajaj Institute of Technology and Management, Greater Noida. I enjoy creating web experiences, solving problems, and learning new technologies.",
 };
@@ -241,6 +243,7 @@ export const certificatesData: CertificateItem[] = [
     date: 'July 14, 2026',
     category: 'AI / Technology',
     recipient: 'Nidhi Kumari',
+    image: 'https://res.cloudinary.com/dkduejkuj/image/upload/v1786824556/IntrotoModernAIUpdate20260714-20-iv2g19_page-0001_udfjof.jpg',
     description: 'Successfully completed the Introduction to Modern AI course from Cisco Networking Academy, mastering fundamental AI principles, LLMs, and intelligent dialogue systems.',
     topics: [
       'Basic AI and Machine Learning concepts',
@@ -257,18 +260,20 @@ export const certificatesData: CertificateItem[] = [
     verificationUrl: '#',
   },
   {
-    id: 'gfg-python-skillup',
-    title: 'Python Skill Up',
-    issuer: 'GeeksforGeeks',
-    date: '2026',
-    category: 'Programming',
-    recipient: 'NIDHI KUMARI',
-    description: 'Successfully completed the Python Skill Up program, demonstrating continued learning and development of Python programming skills.',
+    id: 'cisco-intro-cybersecurity',
+    title: 'Introduction to Cybersecurity',
+    issuer: 'Cisco Networking Academy',
+    date: 'July 27, 2026',
+    category: 'Cybersecurity',
+    recipient: 'Nidhi Kumari',
+    image: 'https://res.cloudinary.com/dkduejkuj/image/upload/v1786825410/f6115347-1515-4d0a-b88d-82f16f07d4da.png',
+    description: 'Achieved student level credential for completing the Introduction to Cybersecurity course from Cisco Networking Academy, demonstrating proficiency in online safety, threat mitigation, and organizational defense strategies.',
     topics: [
-      'Python Syntax & Data Structures',
-      'Functions & Control Flow',
-      'Object-Oriented Programming in Python',
-      'Problem Solving & Data Handling'
+      'Basics of online safety & cybersecurity impact',
+      'Common cyber threats, attacks, & vulnerabilities',
+      'Personal online protection practices',
+      'Organizational security & defense operations',
+      'Cybersecurity career pathways & resources'
     ],
     verificationUrl: '#',
   },
@@ -279,6 +284,7 @@ export const certificatesData: CertificateItem[] = [
     date: '2026',
     category: 'Workshop',
     recipient: 'Nidhi Kumari',
+    image: 'https://res.cloudinary.com/dkduejkuj/image/upload/v1786825121/144891cc-e61a-4d78-860b-5600f100f35b.png',
     description: 'Successfully completed the Career Boost Workshop conducted through the GeeksforGeeks Classroom Program.',
     topics: [
       'Technical Interview Preparation',

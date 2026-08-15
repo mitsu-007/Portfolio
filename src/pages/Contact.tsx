@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PageTransition } from '../components/PageTransition';
-import { SectionHeading } from '../components/SectionHeading';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { Toast } from '../components/Toast';
 import { personalInfo } from '../data/portfolioData';
-import { Phone, GraduationCap, Send, Copy, Check, Linkedin, Github, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { 
+  Phone, 
+  Mail, 
+  Linkedin, 
+  Send, 
+  Copy, 
+  Check, 
+  ExternalLink, 
+  GraduationCap, 
+  MessageSquare, 
+  CheckCircle2, 
+  ArrowUpRight 
+} from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -55,102 +66,150 @@ export const Contact: React.FC = () => {
     }, 700);
   };
 
-  const copyPhoneToClipboard = () => {
-    navigator.clipboard.writeText(personalInfo.phone);
+  const copyPhoneToClipboard = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText('9955862892');
     setCopiedPhone(true);
-    setToastMessage(`Phone number (+91 ${personalInfo.phone}) copied to clipboard!`);
+    setToastMessage('Phone number (9955862892) copied to clipboard!');
     setTimeout(() => setCopiedPhone(false), 2500);
   };
 
   return (
     <PageTransition>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-10">
         
-        <SectionHeading
-          badge="Let's Connect"
-          title="Contact Me"
-          subtitle="Feel free to reach out directly regarding internships, placements, or project collaborations."
-        />
+        {/* Contact Page Introduction Header */}
+        <div className="space-y-3 text-center max-w-2xl mx-auto">
+          <ScrollReveal>
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#88B8B3] bg-[#07323D] px-3.5 py-1.5 rounded-full border border-[#527779]">
+              <MessageSquare className="w-3.5 h-3.5 text-[#88B8B3]" />
+              <span className="uppercase tracking-wider">Get In Touch</span>
+            </div>
+          </ScrollReveal>
 
+          <ScrollReveal delay={0.1}>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#061925] tracking-tight">
+              Let's Connect
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <p className="text-sm sm:text-base font-semibold text-[#527779] leading-relaxed">
+              Have a project, opportunity, or collaboration in mind? Feel free to get in touch.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        {/* Main Grid: Contact Cards & Contact Form */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           
-          {/* LEFT SIDE: Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
+          {/* LEFT COLUMN: Three Primary Contact Cards */}
+          <div className="lg:col-span-2 space-y-5">
             <ScrollReveal direction="right">
-              <div className="bg-[#061925] text-[#F7F8F7] rounded-3xl p-6 sm:p-8 space-y-6 shadow-md border border-[#527779] relative overflow-hidden">
-                <div className="space-y-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#061925] bg-[#88B8B3] px-3 py-1 rounded-full">
-                    Direct Contact
-                  </span>
-                  <h3 className="text-2xl font-extrabold text-[#F7F8F7]">Let's Connect</h3>
-                  <p className="text-xs text-[#D2D7D8] leading-relaxed">
-                    I am a 3rd-year Computer Science & Data Science student available for internships, placements, hackathons, and professional networking.
-                  </p>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between px-1">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-[#527779]">
+                    Contact Information
+                  </h2>
                 </div>
 
-                {/* Phone Details Card */}
-                <div className="p-4 rounded-2xl bg-[#07323D] border border-[#527779] space-y-2">
-                  <span className="text-[10px] uppercase font-bold text-[#88B8B3] tracking-wider">Phone Number</span>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-[#F7F8F7] font-bold text-base">
-                      <Phone className="w-4 h-4 text-[#88B8B3]" />
-                      <span>+91 {personalInfo.phone}</span>
+                {/* Card 1: Phone */}
+                <motion.a
+                  href="tel:9955862892"
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                  aria-label="Call Nidhi Kumari"
+                  className="bg-[#07323D] text-[#F7F8F7] p-4 sm:p-5 rounded-2xl border border-[#527779] hover:border-[#88B8B3] transition-all duration-300 shadow-2xs group flex items-center justify-between gap-3 cursor-pointer"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#061925] border border-[#527779] group-hover:border-[#88B8B3] flex items-center justify-center text-[#88B8B3] transition-colors flex-shrink-0 shadow-2xs">
+                      <Phone className="w-5 h-5 transition-transform duration-300 group-hover:scale-105" />
                     </div>
-
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={copyPhoneToClipboard}
-                      className="p-2 rounded-xl bg-[#061925] hover:bg-[#527779] text-[#F7F8F7] transition-colors flex items-center gap-1 text-xs border border-[#527779]"
-                      title="Copy Phone Number"
-                    >
-                      {copiedPhone ? <Check className="w-3.5 h-3.5 text-[#88B8B3]" /> : <Copy className="w-3.5 h-3.5 text-[#88B8B3]" />}
-                      <span className="text-[11px] font-semibold">{copiedPhone ? 'Copied' : 'Copy'}</span>
-                    </motion.button>
-                  </div>
-                </div>
-
-                {/* Academic Details */}
-                <div className="space-y-3 pt-2 text-xs text-[#D2D7D8]">
-                  <div className="flex items-start gap-3">
-                    <GraduationCap className="w-4 h-4 text-[#88B8B3] flex-shrink-0 mt-0.5" />
-                    <div>
-                      <span className="text-[#88B8B3] block text-[10px] uppercase font-bold">Institution</span>
-                      <span className="font-semibold text-[#F7F8F7]">{personalInfo.college}</span>
-                      <span className="block text-[11px] text-[#D2D7D8]">Greater Noida, Uttar Pradesh</span>
+                    <div className="min-w-0">
+                      <span className="text-[10px] uppercase font-bold text-[#88B8B3] tracking-wider block">Phone</span>
+                      <span className="font-extrabold text-sm sm:text-base text-[#F7F8F7] group-hover:text-[#88B8B3] transition-colors block truncate">
+                        9955862892
+                      </span>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <MessageSquare className="w-4 h-4 text-[#88B8B3] flex-shrink-0 mt-0.5" />
-                    <div>
-                      <span className="text-[#88B8B3] block text-[10px] uppercase font-bold">Program & Year</span>
-                      <span className="font-semibold text-[#F7F8F7]">Computer Science & Data Science • 3rd Year</span>
+                  <button
+                    type="button"
+                    onClick={copyPhoneToClipboard}
+                    className="p-2 rounded-lg bg-[#061925] hover:bg-[#527779] text-[#88B8B3] hover:text-[#F7F8F7] border border-[#527779] transition-colors text-xs flex items-center gap-1 flex-shrink-0"
+                    title="Copy Phone Number"
+                    aria-label="Copy Phone Number"
+                  >
+                    {copiedPhone ? <Check className="w-3.5 h-3.5 text-[#88B8B3]" /> : <Copy className="w-3.5 h-3.5 text-[#88B8B3]" />}
+                    <span className="text-[11px] font-semibold hidden sm:inline">{copiedPhone ? 'Copied' : 'Copy'}</span>
+                  </button>
+                </motion.a>
+
+                {/* Card 2: Email */}
+                <motion.a
+                  href="mailto:nidhikumari62014@gmail.com"
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                  aria-label="Send email to Nidhi Kumari"
+                  className="bg-[#07323D] text-[#F7F8F7] p-4 sm:p-5 rounded-2xl border border-[#527779] hover:border-[#88B8B3] transition-all duration-300 shadow-2xs group flex items-center justify-between gap-3 cursor-pointer"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#061925] border border-[#527779] group-hover:border-[#88B8B3] flex items-center justify-center text-[#88B8B3] transition-colors flex-shrink-0 shadow-2xs">
+                      <Mail className="w-5 h-5 transition-transform duration-300 group-hover:scale-105" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[10px] uppercase font-bold text-[#88B8B3] tracking-wider block">Email</span>
+                      <span className="font-extrabold text-xs sm:text-sm text-[#F7F8F7] group-hover:text-[#88B8B3] transition-colors block break-all sm:break-normal">
+                        nidhikumari62014@gmail.com
+                      </span>
                     </div>
                   </div>
-                </div>
 
-                {/* Professional Links */}
-                <div className="pt-4 border-t border-[#527779] space-y-2">
-                  <span className="text-[10px] uppercase font-bold text-[#88B8B3] tracking-wider">Professional Networks</span>
-                  <div className="flex items-center gap-3">
-                    <motion.div 
-                      whileHover={{ y: -2 }}
-                      className="flex items-center gap-2 p-2.5 rounded-xl bg-[#07323D] border border-[#527779] text-xs text-[#D2D7D8] hover:text-white transition-colors cursor-pointer"
-                      onClick={() => setToastMessage("LinkedIn profile link active")}
-                    >
-                      <Linkedin className="w-4 h-4 text-[#88B8B3]" />
-                      <span className="font-bold text-[11px]">LinkedIn</span>
-                    </motion.div>
+                  <div className="p-2 rounded-lg bg-[#061925] border border-[#527779] group-hover:border-[#88B8B3] text-[#88B8B3] transition-colors flex-shrink-0">
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                </motion.a>
 
-                    <motion.div 
-                      whileHover={{ y: -2 }}
-                      className="flex items-center gap-2 p-2.5 rounded-xl bg-[#07323D] border border-[#527779] text-xs text-[#D2D7D8] hover:text-white transition-colors cursor-pointer"
-                      onClick={() => setToastMessage("GitHub profile link active")}
-                    >
-                      <Github className="w-4 h-4 text-[#88B8B3]" />
-                      <span className="font-bold text-[11px]">GitHub</span>
-                    </motion.div>
+                {/* Card 3: LinkedIn */}
+                <motion.a
+                  href="https://www.linkedin.com/in/nidhi-kumari1512/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                  aria-label="Open Nidhi Kumari's LinkedIn profile"
+                  className="bg-[#07323D] text-[#F7F8F7] p-4 sm:p-5 rounded-2xl border border-[#527779] hover:border-[#88B8B3] transition-all duration-300 shadow-2xs group flex items-center justify-between gap-3 cursor-pointer"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#061925] border border-[#527779] group-hover:border-[#88B8B3] flex items-center justify-center text-[#88B8B3] transition-colors flex-shrink-0 shadow-2xs">
+                      <Linkedin className="w-5 h-5 transition-transform duration-300 group-hover:scale-105" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[10px] uppercase font-bold text-[#88B8B3] tracking-wider block">LinkedIn</span>
+                      <span className="font-extrabold text-xs sm:text-sm text-[#F7F8F7] group-hover:text-[#88B8B3] transition-colors block break-all sm:break-normal">
+                        Nidhi Kumari
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-2 rounded-lg bg-[#061925] border border-[#527779] group-hover:border-[#88B8B3] text-[#88B8B3] transition-colors flex-shrink-0">
+                    <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </motion.a>
+
+                {/* Secondary Academic Location Summary Card */}
+                <div className="bg-[#07323D] text-[#F7F8F7] p-5 rounded-2xl border border-[#527779] space-y-3 shadow-xs mt-2">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#88B8B3] uppercase tracking-wider">
+                    <GraduationCap className="w-4 h-4 text-[#88B8B3]" />
+                    <span>Academic Details</span>
+                  </div>
+                  <div className="space-y-1 text-xs text-[#D2D7D8] leading-relaxed">
+                    <p className="font-extrabold text-[#F7F8F7] text-sm">{personalInfo.college}</p>
+                    <p>Computer Science & Data Science • 3rd Year</p>
+                    <p className="text-[11px] text-[#88B8B3] font-semibold pt-1">
+                      {personalInfo.location}
+                    </p>
                   </div>
                 </div>
 
@@ -158,14 +217,14 @@ export const Contact: React.FC = () => {
             </ScrollReveal>
           </div>
 
-          {/* RIGHT SIDE: Contact Form */}
+          {/* RIGHT COLUMN: Contact Form */}
           <div className="lg:col-span-3">
             <ScrollReveal direction="left">
               <div className="bg-[#07323D] text-[#F7F8F7] rounded-3xl p-6 sm:p-8 border border-[#527779] shadow-2xs space-y-6">
                 <div>
-                  <h3 className="text-xl font-extrabold text-[#F7F8F7]">Send a Message</h3>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#F7F8F7]">Contact Form</h3>
                   <p className="text-xs text-[#D2D7D8] mt-1">
-                    Fill out the form below to get in touch with Nidhi Kumari.
+                    Fill out the form below to send a direct message to Nidhi Kumari.
                   </p>
                 </div>
 
@@ -271,10 +330,10 @@ export const Contact: React.FC = () => {
                         whileTap={{ scale: 0.99 }}
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-xs font-bold text-[#061925] bg-[#88B8B3] hover:bg-[#061925] hover:text-[#F7F8F7] disabled:opacity-70 transition-all shadow-xs group"
+                        className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-xs font-bold text-[#061925] bg-[#88B8B3] hover:bg-[#061925] hover:text-[#F7F8F7] disabled:opacity-70 transition-all shadow-xs group cursor-pointer"
                       >
                         <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        <span>{isSubmitting ? 'Sending Message...' : 'Submit Message'}</span>
+                        <span>{isSubmitting ? 'Sending Message...' : 'Send Message'}</span>
                       </motion.button>
 
                     </form>
@@ -295,3 +354,4 @@ export const Contact: React.FC = () => {
     </PageTransition>
   );
 };
+

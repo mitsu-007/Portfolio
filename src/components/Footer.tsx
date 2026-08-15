@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { GraduationCap, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { GraduationCap, Phone, Mail, Linkedin, MapPin, ArrowUp } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -74,19 +74,40 @@ export const Footer: React.FC = () => {
           {/* Direct Contact Details */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#88B8B3]">Direct Contact</h4>
-            <div className="space-y-2.5 text-xs text-[#D2D7D8]">
-              <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#88B8B3]" />
-                <span className="font-bold text-[#F7F8F7]">+91 {personalInfo.phone}</span>
-              </p>
-              <p className="text-[11px] text-[#D2D7D8] leading-relaxed">
-                Available for internships, hackathons, software development roles, and professional collaborations.
-              </p>
+            <div className="space-y-2 text-xs text-[#D2D7D8]">
+              <a 
+                href="tel:9955862892" 
+                aria-label="Call Nidhi Kumari"
+                className="flex items-center gap-2 hover:text-[#88B8B3] transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#88B8B3] flex-shrink-0" />
+                <span className="font-bold text-[#F7F8F7]">9955862892</span>
+              </a>
+
+              <a 
+                href="mailto:nidhikumari62014@gmail.com" 
+                aria-label="Send email to Nidhi Kumari"
+                className="flex items-center gap-2 hover:text-[#88B8B3] transition-colors truncate"
+              >
+                <Mail className="w-3.5 h-3.5 text-[#88B8B3] flex-shrink-0" />
+                <span className="font-semibold text-[#F7F8F7] truncate">{personalInfo.email}</span>
+              </a>
+
+              <a 
+                href="https://www.linkedin.com/in/nidhi-kumari1512/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Open Nidhi Kumari's LinkedIn profile"
+                className="flex items-center gap-2 hover:text-[#88B8B3] transition-colors truncate"
+              >
+                <Linkedin className="w-3.5 h-3.5 text-[#88B8B3] flex-shrink-0" />
+                <span className="font-semibold text-[#F7F8F7] truncate">linkedin.com/in/nidhi-kumari1512</span>
+              </a>
               
               <motion.button
                 whileHover={{ y: -2 }}
                 onClick={scrollToTop}
-                className="mt-2 inline-flex items-center gap-2 text-xs font-bold text-[#88B8B3] hover:text-white transition-colors group"
+                className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-[#88B8B3] hover:text-white transition-colors group cursor-pointer"
               >
                 <span>Back to top</span>
                 <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-200" />

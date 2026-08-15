@@ -9,7 +9,20 @@ interface CertificateArtProps {
 }
 
 export const CertificateArt: React.FC<CertificateArtProps> = ({ certificate, className = '', isLarge = false }) => {
-  const { id, title, issuer, date, recipient, isPdf } = certificate;
+  const { id, title, issuer, date, recipient, isPdf, image } = certificate;
+
+  if (image) {
+    return (
+      <div className={`relative w-full aspect-[1.414/1] bg-[#061925] rounded-xl overflow-hidden border-2 border-[#527779] shadow-xs flex items-center justify-center ${className}`}>
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover object-center rounded-lg"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+    );
+  }
 
   // Custom styling per issuer for realistic certificate designs
   const getBranding = () => {

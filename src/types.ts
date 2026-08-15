@@ -10,6 +10,8 @@ export interface PersonalInfo {
   courseFull: string;
   phone: string;
   email: string;
+  linkedinUrl?: string;
+  linkedinDisplay?: string;
   bio: string;
   tagline: string;
 }
