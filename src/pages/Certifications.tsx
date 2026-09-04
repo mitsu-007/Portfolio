@@ -14,13 +14,10 @@ export const Certifications: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
 
-  const categories = [
-    'All',
-    'AI / Technology',
-    'Programming',
-    'Workshop',
-    'Course',
-  ];
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(certificatesData.map(c => c.category)));
+    return ['All', ...uniqueCategories];
+  }, []);
 
   // Dynamic Statistics Calculation
   const totalCertificates = certificatesData.length;

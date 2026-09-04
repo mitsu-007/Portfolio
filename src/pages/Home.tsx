@@ -23,70 +23,23 @@ export const Home: React.FC = () => {
             500ms: Hero Subtitle
             650ms: CTA Buttons
             ========================================== */}
-        <section className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <section className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center min-h-[70vh] py-6">
           
-          {/* Student Status Tag */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#07323D] border border-[#527779] text-[#F7F8F7] shadow-2xs mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#88B8B3] animate-pulse" />
-            <span>3rd Year Computer Science & Data Science</span>
-            <span className="text-[#88B8B3]">•</span>
-            <span className="text-[#88B8B3]">GL Bajaj ITM</span>
-          </motion.div>
-
           {/* Core Visual Layout Grid */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 lg:gap-14 my-4">
+          <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center justify-items-center gap-6 md:gap-8 lg:gap-12 my-4 text-center">
             
             {/* LEFT SIDE: "NIDHI" (250ms delay, translateX(-40px) -> 0) */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col items-center md:items-end text-center md:text-right order-1 md:order-1 flex-1 group cursor-default"
+              className="w-full flex flex-col items-center text-center md:items-end md:text-right order-1 md:order-1 min-w-0 group cursor-default"
             >
               <div className="relative inline-block">
                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#061925] leading-none transition-colors duration-300 group-hover:text-[#07323D]">
                   NIDHI
                 </h1>
                 
-                {/* Name Hover Underline Expansion Effect */}
-                <motion.span
-                  className="absolute bottom-0 left-0 w-full h-1.5 bg-[#07323D] rounded-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
-                />
-              </div>
-              
-              <div className="w-28 sm:w-36 h-1 bg-[#061925] rounded-full mt-3 mb-2" />
-              
-              <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#07323D]">
-                Computer Science
-              </p>
-              <div className="hidden md:flex items-center gap-2 mt-2 text-xs text-[#061925] font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#061925]" />
-                <span>Web Architecture</span>
-              </div>
-            </motion.div>
-
-            {/* CENTER: PROFILE PHOTO (150ms delay) */}
-            <div className="order-2 md:order-2 my-4 md:my-0 flex-shrink-0">
-              <ProfilePhoto size="large" delay={0.15} />
-            </div>
-
-            {/* RIGHT SIDE: "KUMARI" (350ms delay, translateX(40px) -> 0) */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col items-center md:items-start text-center md:text-left order-3 md:order-3 flex-1 group cursor-default"
-            >
-              <div className="relative inline-block">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#061925] leading-none transition-colors duration-300 group-hover:text-[#07323D]">
-                  KUMARI
-                </h1>
-
                 {/* Name Hover Underline Expansion Effect */}
                 <motion.span
                   className="absolute bottom-0 left-0 w-full h-1.5 bg-[#07323D] rounded-full origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
@@ -96,9 +49,56 @@ export const Home: React.FC = () => {
               <div className="w-28 sm:w-36 h-1 bg-[#061925] rounded-full mt-3 mb-2" />
               
               <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#07323D]">
+                Computer Science
+              </p>
+              <div className="flex items-center gap-2 mt-2 text-xs text-[#061925] font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#061925]" />
+                <span>Web Developer</span>
+              </div>
+            </motion.div>
+
+            {/* CENTER: PROFILE PHOTO (150ms delay) WITH TAG ABOVE */}
+            <div className="order-2 md:order-2 my-4 md:my-0 flex flex-col items-center justify-center text-center justify-self-center mx-auto w-full">
+              {/* Student Status Tag */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="inline-flex items-center justify-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-[#07323D] border border-[#527779] text-[#F7F8F7] shadow-2xs -mt-4 sm:-mt-6 mb-3 sm:mb-4 mx-auto self-center text-center max-w-full"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#88B8B3] animate-pulse shrink-0" />
+                <span>3rd Year Computer Science & Data Science</span>
+                <span className="text-[#88B8B3] shrink-0">•</span>
+                <span className="text-[#88B8B3] shrink-0">GL Bajaj ITM</span>
+              </motion.div>
+
+              <ProfilePhoto size="large" delay={0.15} />
+            </div>
+
+            {/* RIGHT SIDE: "KUMARI" (350ms delay, translateX(40px) -> 0) */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full flex flex-col items-center text-center md:items-start md:text-left order-3 md:order-3 min-w-0 group cursor-default"
+            >
+              <div className="relative inline-block">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#061925] leading-none transition-colors duration-300 group-hover:text-[#07323D]">
+                  KUMARI
+                </h1>
+
+                {/* Name Hover Underline Expansion Effect */}
+                <motion.span
+                  className="absolute bottom-0 left-0 w-full h-1.5 bg-[#07323D] rounded-full origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+                />
+              </div>
+              
+              <div className="w-28 sm:w-36 h-1 bg-[#061925] rounded-full mt-3 mb-2" />
+              
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#07323D]">
                 Data Science
               </p>
-              <div className="hidden md:flex items-center gap-2 mt-2 text-xs text-[#061925] font-semibold">
+              <div className="flex items-center gap-2 mt-2 text-xs text-[#061925] font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#061925]" />
                 <span>Problem Solving</span>
               </div>
