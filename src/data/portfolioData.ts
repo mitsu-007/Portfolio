@@ -266,7 +266,7 @@ export const certificatesData: CertificateItem[] = [
     date: 'July 27, 2026',
     category: 'Cybersecurity',
     recipient: 'Nidhi Kumari',
-    image: 'https://res.cloudinary.com/dkduejkuj/image/upload/v1786825410/f6115347-1515-4d0a-b88d-82f16f07d4da.png',
+    image: 'https://res.cloudinary.com/dkduejkuj/image/upload/v1788762100/e0c498dd-ce1d-47c6-98fe-69cee90ed2a7.png',
     description: 'Achieved student level credential for completing the Introduction to Cybersecurity course from Cisco Networking Academy, demonstrating proficiency in online safety, threat mitigation, and organizational defense strategies.',
     topics: [
       'Basics of online safety & cybersecurity impact',
